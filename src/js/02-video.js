@@ -15,4 +15,7 @@ const currentTime = function ({ seconds }) {
   let time = localStorage.getItem(CURRENT_NAME_KEY);
   console.log(time);
 };
+
 player.on('timeupdate', throttle(currentTime, 500));
+
+const time = '';
