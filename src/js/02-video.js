@@ -12,10 +12,8 @@ player.on('play', function () {
 
 const currentTime = function ({ seconds }) {
   localStorage.setItem(CURRENT_NAME_KEY, JSON.stringify(seconds));
-  let time = localStorage.getItem(CURRENT_NAME_KEY);
+  let time = Number(localStorage.getItem(CURRENT_NAME_KEY));
   console.log(time);
 };
 
 player.on('timeupdate', throttle(currentTime, 500));
-
-const time = '';
