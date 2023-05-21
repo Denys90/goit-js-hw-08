@@ -15,11 +15,20 @@ const currentTime = function ({ seconds }) {
     CURRENT_NAME_KEY,
     JSON.stringify(seconds)
   );
-
-  if (currentTime) {
-    let time = Number(localStorage.getItem(CURRENT_NAME_KEY));
-    console.log(time);
-  }
 };
+let time = Number(localStorage.getItem(CURRENT_NAME_KEY));
 
 newPlayer.on('timeupdate', throttle(currentTime, 500));
+
+newPlayer
+  .setCurrentTime(time)
+  // .then(function (seconds) {})
+  .catch(function (error) {
+    switch (error.name) {
+      case 'RangeError':
+        break;
+
+      default:
+        break;
+    }
+  });
