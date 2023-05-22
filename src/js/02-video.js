@@ -10,5 +10,5 @@ const getCurrentTime = ({ seconds }) => {
   localStorage.setItem(CURRENT_NAME_KEY, seconds);
 };
 
-player.on('timeupdate', throttle(getCurrentTime, 500));
+player.on('timeupdate', throttle(getCurrentTime, 1000));
 player.setCurrentTime(localStorage.getItem(CURRENT_NAME_KEY) || 0);

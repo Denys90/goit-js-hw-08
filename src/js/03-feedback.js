@@ -10,9 +10,9 @@ form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
   e.preventDefault();
+  console.log(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
   e.currentTarget.reset();
   localStorage.removeItem(LOCAL_STORAGE_KEY);
-  console.log(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
 }
 
 function onFormInput(e) {
